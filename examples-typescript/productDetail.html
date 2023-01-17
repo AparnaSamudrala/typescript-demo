@@ -1,0 +1,121 @@
+doctype html>
+<html>
+
+<head>
+    <title>Mobile Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-inverse {
+            background-color: #005580;
+            background-image: none;
+            background-repeat: no-repeat;
+            color: #ffffff;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a {
+            color: #ffffff;
+            background-color: transparent;
+
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover {
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Mobile Cart</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="Index.html">Home</a></li>
+            </ul>
+            <!--/.nav-collapse -->
+            <ul class="nav navbar-nav navbar-middle" style="color:white; margin-right:30px;">
+                <li><a href="Cart.html"><span class="glyphicon glyphicon-shopping-cart" style="color:white"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:7%">
+        <div class="row">
+            <div class="col-sm-4">
+                <div style="margin-left:40%;padding-top:15px;">
+                    <div style="padding:15px;">
+                        <div>
+                            <img id="phoneImage" src="https://img3.gadgetsnow.com/gd/images/products/additional/large/G363351_View_1/mobiles/smartphones/nokia-g21-128-gb-nordic-blue-6-gb-ram-.jpg" height="250px">
+                        </div>
+                        <div style="padding-top:10px;">
+                            <div><b><span id="pName"></span></b></div>
+                            <div style="padding-top:10px;"><b>Price:</b>&nbsp;&dollar;<span id="pPrice"></span></div>
+                            <div><b>Status:</b>&nbsp;<span id="pAvailable"></span></div>
+                            <div><b class="text-danger">Discount:</b>&nbsp;<span id="pDiscount"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            <div style="padding-top:15px;">
+                <div>
+                    <img src="https://www.nicepng.com/png/full/173-1737932_color-circles-png-circle.png" style="padding-left:15px;cursor:pointer;width: 120px;height: 120px"
+                        onclick="getMobileByColor('gold');">
+                    <img src="data:image/jpeg;base64,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" style="cursor:pointer;padding-left:15px;width: 120px;height: 120px;"
+                        onclick="getMobileByColor('pink');">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnz7XXbqGigDX2pKjSaFRGaO7GXXnG-0i3g&usqp=CAU" style="cursor:pointer;padding-left:15px;width: 120px;height: 120px;"
+                        onclick="getMobileByColor('silver');">
+
+                </div>
+                <div style="padding-top:10px;">
+                    <span style="padding-left:20px;">
+                        GoldPlatinum
+                    </span>
+                    <span style="padding-left:38px;">
+                        PinkGold
+                    </span>
+                    <span style="padding-left:40px;">
+                        SilverTitanium
+                    </span>
+                </div>
+                <div style="padding-top:10px;">
+                    <span style="padding-left: 20px;">&dollar;</span><span id="gold" style="padding-left: 2px;"></span>
+                    <span style="padding-left: 90px;">&dollar;</span><span id="pinkgold"
+                        style="padding-left: 2px;"></span>
+                    <span style="padding-left: 65px;">&dollar;</span><span id="silver"
+                        style="padding-left: 2px;"></span>
+                    <div id="productDescription" style="padding-top:5%;width:70%;text-align:justify">
+                        Samsung Galaxy Note 7 is a stylish mobile you can ever have. It has 64GB memory.
+                    </div>
+                    <div style="padding-top:5%;padding-right:10%">
+                        <button class="btn btn-success" onclick="addtoCart();">Add to Cart</button>
+                        <a style="padding-left:10px;" onclick="backHome();">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Adding converted js code-->
+<!-- <script src="productdetail.js"></script> -->
+
+</html> 
+
